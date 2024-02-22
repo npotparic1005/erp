@@ -1,6 +1,7 @@
 package com.erp.roba.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "artikli")
@@ -10,16 +11,25 @@ public class Artikal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
+    @Column(unique = true)
+    private String sifra;
+
+    @NotNull
     private String naziv;
 
-//    private String sifraArtikla;
+    @NotNull
+    private String jedinicaMere;
 
-//    private String jedinicaMere;
+    public String getSifra() {
+        return sifra;
+    }
 
-//    private Double marza;
+    public String getNaziv() {
+        return naziv;
+    }
 
-//    @OneToMany(cascade = CascadeType.ALL)
-//    private List<NabavnaCena> nabavneCene;
-
-    // Getters and setters...
+    public String getJedinicaMere() {
+        return jedinicaMere;
+    }
 }

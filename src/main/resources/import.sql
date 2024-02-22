@@ -1,0 +1,1 @@
+insert into artikli(id, naziv) values(1, 'Test artikl');
